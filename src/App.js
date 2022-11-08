@@ -3,20 +3,25 @@ import { FaHandPaper } from 'react-icons/fa';
 import { FaHandScissors } from 'react-icons/fa';
 import './App.css';
 
+function Player({name = "Player", score = 0}) {
+  return (
+    <div className='player'>
+      <div className='score'>{name}: {score}</div>
+      <div className='action'>
+        <FaHandRock size={60} />
+      </div>
+    </div>
+  )
+}
+
 function App() {
   return (
     <div className='center'>
       <h1>Rock Paper Scissors</h1>
       <div>
         <div className='container'>
-          <div className='player'>
-            <div className='score'>Player 1: 0</div>
-            <div></div>
-          </div>
-          <div className='player'>
-            <div className='score'>Player 2: 0</div>
-            <div></div>
-          </div>
+          <Player name="Player" score={0} />
+          <Player name="Computer" score={0} />
         </div>
         <div>
           <button className='round-bnt'>
